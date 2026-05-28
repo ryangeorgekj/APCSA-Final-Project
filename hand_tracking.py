@@ -5,8 +5,9 @@ import numpy as np
 import simpleaudio as sa
 import pygame
 
+#Advaith
 pygame.mixer.init(frequency=44100, size=-16, channels=1) # Advaith
-pygame.mixer.set_num_channels(20)                   
+pygame.mixer.set_num_channels(20) 
                                                                             
 def make_tone(frequency, duration=1.0, volume=0.3, sample_rate=44100):
     num_cycles = round(duration * frequency)      
@@ -25,7 +26,7 @@ middle_sound = make_tone(329.63)  # E4 - Mi
 ring_sound   = make_tone(349.23)  # F4 - Fa
 pinky_sound  = make_tone(392.00)  # G4 - Sol
 
-# Advaith 
+
 
 thumb_playing  = False
 index_playing  = False
@@ -39,6 +40,8 @@ middle_channel = None
 ring_channel   = None
 pinky_channel  = None
 
+
+# Ryan
 BaseOptions = mp.tasks.BaseOptions
 HandLandmarker = mp.tasks.vision.HandLandmarker
 HandLandmarkerOptions = mp.tasks.vision.HandLandmarkerOptions
@@ -90,7 +93,7 @@ with HandLandmarker.create_from_options(options) as landmarker:
                     (13,17),(17,18),(18,19),(19,20), # pinky
                     (0,17)                            # palm base
                 ]
-                # Ryan and a little bit of Advaith
+                # Ryan and Advaith
                 line = hand[9].y + 0.05
                 # Thumb
                 if hand[4].y > line:
